@@ -23,9 +23,10 @@ if(@$_SESSION['islogin']) {
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/main.css">
 
 	</head>
-	<body>
+	<body style="background-image: url(../img/bg.webp);background-repeat: no-repeat;background-size: cover;">
 	<section class="ftco-section pt-3">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -41,7 +42,7 @@ if(@$_SESSION['islogin']) {
 						<div class="login-wrap p-4 p-md-5">
 			      	<div class="d-flex">
 			      		<div class="w-100">
-			      			<h3 class="mb-4" style="font-family: comic sans ms; color: #43585F; font-weight: 600; font-size: 27px;">Harus Login!!!!</h3>
+			      			<h3 class="mb-4" style="font-family: comic sans ms; color: #DC5440; font-weight: 600; font-size: 27px;">Harus Login!!!!</h3>
 			      		</div>
 								<div class="w-100">
 									<p class="social-media d-flex justify-content-end">
@@ -52,11 +53,11 @@ if(@$_SESSION['islogin']) {
 			      	</div>
 							<form action="../controller/proses_login.php" class="signin-form" method="post">
 			      		<div class="form-group mb-3">
-			      			<label class="label" for="name">Username</label>
+			      			<label class="label" for="name" style="color: #540508; font-weight: bold; font-size: 15px">Username</label>
 			      			<input type="text" name="username" class="form-control" placeholder="Username" required>
 			      		</div>
 		            <div class="form-group mb-3">
-		            	<label class="label" for="password">Password</label>
+		            	<label class="label" for="password" style="color: #540508; font-weight: bold; font-size: 15px">Password</label>
 		              <input type="password" name="password" class="form-control" placeholder="Password" required>
 		            </div>
 		            <div class="form-group">
@@ -64,7 +65,7 @@ if(@$_SESSION['islogin']) {
 		            </div>
 		            <div class="form-group d-md-flex">
 		            	<div class="w-50 text-left">
-			            	<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+			            	<label class="checkbox-wrap  mb-0" style="color: #DC5440; font-weight: 700;">Remember Me
 									  <input type="checkbox" checked>
 									  <span class="checkmark"></span>
 										</label>
@@ -74,7 +75,7 @@ if(@$_SESSION['islogin']) {
 									</div>
 		            </div>
 		          </form>
-		          <p class="text-center">Not a member? <a data-toggle="tab" href="#signup">Sign Up</a></p>
+		          <p class="text-center">Not a member? <a data-toggle="tab" href="#signup" style="color: #DC5440;">Sign Up</a></p>
 		        </div>
 		      </div>
 				</div>

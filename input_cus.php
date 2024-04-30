@@ -32,9 +32,10 @@ $customer = $db->single();
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="main.css">
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
   <div class="wrapper">
 
     <?php
@@ -52,11 +53,11 @@ $customer = $db->single();
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>CUSTOMER</h1>
+              <h1 class="customer">CUSTOMER</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#" class="page-c">Home</a></li>
                 <li class="breadcrumb-item active">
                   <?php
                   if ($id_cus) {
@@ -133,19 +134,16 @@ $customer = $db->single();
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
-    </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+    <?php
+    require('template/footer.php');
+    ?>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
 

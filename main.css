@@ -1,0 +1,81 @@
+/* .main-footer {
+    background-color: #fcb6cb;
+} */
+
+.admin {
+    color: #7700ff !important;
+    font-weight: 800;
+    font-family: monospace;
+    padding-left: 20px;
+}
+
+.customer {
+    color: #009dff !important;
+    font-weight: 800;
+    font-family: Rockwell;
+    padding-left: 20px;
+}
+
+.loan {
+    color: #da085f !important;
+    font-weight: 800;
+    font-family: Gill Sans MT;
+    padding-left: 20px;
+}
+
+.buku {
+    color: #ff7300 !important;
+    font-weight: 800;
+    font-family: Goudy Stout;
+    padding-left: 20px;
+}
+
+.utama {
+    color: #11aa77 !important;
+    font-weight: 800;
+    font-family: 	Trebuchet MS;
+    padding-left: 20px;
+}
+
+.ikon {
+    color: #be0000 !important;
+    font-weight: 800;
+    font-family: cursive;
+}
+
+.user {
+    color: #be0000 !important;
+    font-weight: 800;
+    font-family: cursive;
+}
+
+.page-a {
+    color: #7700ff !important;
+}
+
+.page-b {
+    color: #ff7300 !important;
+}
+
+.page-c {
+    color: #009dff !important;
+}
+
+.page-p {
+    color: #da085f !important;
+}
+
+/* .page-d {
+    color: #11aa77 !important;
+} */
+
+.out {
+    color: #be0000 !important;
+    font-weight: 800;
+}
+
+.homme {
+    color: #be0000 !important;
+    font-weight: 800;
+    /* font-size: large !important; */
+}

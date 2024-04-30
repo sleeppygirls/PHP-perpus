@@ -5,17 +5,13 @@ require('db/database.php');
 $db = new Database();
 
 // Mengambil data no_induk menggunakan GET
-$username = @$_GET['username'];
+$no = @$_GET['id'];
 
-// Membuat query delete data
-$db->query('SELECT * FROM admins WHERE username = :username');
+$db->query('SELECT * FROM books');
+$bukus = $db->get();
 
-// Binding data query dengan variable
-$db->bind('username', $username);
-
-// Execute query ke database
-$admin = $db->single();
-
+$db->query('SELECT * FROM customers');
+$customers = $db->get();
 ?>
 
 <!DOCTYPE html>
@@ -24,14 +20,12 @@ $admin = $db->single();
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>INPUT ADMIN</title>
+  <title>PEMINJAMAN BUKU</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <link rel="stylesheet" href="main.css">
@@ -55,17 +49,17 @@ $admin = $db->single();
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="admin">ADMIN</h1>
+              <h1 class="loan">PEMINJAMAN BUKU</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#" class="page-a">Home</a></li>
+                <li class="breadcrumb-item"><a href="#" class="page-p">Home</a></li>
                 <li class="breadcrumb-item active">
                   <?php
-                  if ($admin) {
-                    echo 'Edit Admin';
+                  if ($no) {
+                    echo 'Edit Peminjaman Buku';
                   } else {
-                    echo 'Tambah Admin';
+                    echo 'Tambah Peminjaman Buku';
                   }
                   ?>
                 </li>
@@ -78,7 +72,7 @@ $admin = $db->single();
       <!-- Main content -->
       <section class="content">
 
-        <form enctype="multipart/form-data" action="<?= (@$admin ? 'controller/update_admin.php' : 'controller/save_admin.php'); ?>" method="POST">
+        <form enctype="multipart/form-data" action="<?= (@$no ? 'controller/update_loans.php' : 'controller/save_loans.php'); ?>" method="POST">
           <div class="container-fluid">
             <div class="row">
               <!-- left column -->
@@ -88,10 +82,10 @@ $admin = $db->single();
                   <div class="card-header">
                     <h3 class="card-title">
                       <?php
-                      if (@$admin) {
-                        echo 'Edit Admin';
+                      if ($no) {
+                        echo 'Edit Peminjaman Buku';
                       } else {
-                        echo 'Tambah Admin';
+                        echo 'Tambah Peminjaman Buku';
                       }
                       ?>
                     </h3>
@@ -99,21 +93,32 @@ $admin = $db->single();
                   <!-- /.card-header -->
                   <!-- form start -->
                   <div class="card-body">
+
+                    <?php
+                    if ($no) {
+                    ?>
+                      <input name="id" type="hidden" value="<?= @$no ?>">
+                    <?php } ?>
+
                     <div class="form-group">
-                      <label for="username">Username</label>
-                      <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan Username" required <?= @$admin['username'] ? 'readonly' : ''; ?> value="<?= @$admin['username'] ?>">
+                      <label for="no_induk">Buku</label>
+                      <select name="no_induk" class="form-control">
+                        <?php
+                        foreach ($bukus as $buku) {
+                        ?>
+                          <option value=<?= $buku['no_induk'] ?>> <?= $buku['judul'] ?></option>
+                        <?php } ?>
+                      </select>
                     </div>
                     <div class="form-group">
-                      <label for="password">Password</label>
-                      <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan Password" required <?= @$admin['password'] ? 'readonly' : ''; ?>  value="<?= @$admin['password'] ?>">
-                    </div>
-                    <div class="form-group">
-                      <label for="jk">Jenis Kelamin</label>
-                      <input type="number" class="form-control" name="jk" id="jk" placeholder="Masukkan Jenis Kelamin" required value="<?= @$admin['jk'] ?>">
-                    </div>
-                    <div class="form-group">
-                      <label for="status">Status</label>
-                      <input type="number" class="form-control" name="status" id="status" placeholder="Masukkan Status" required value="<?= @$admin['status'] ?>">
+                      <label for="id_cus">Customer</label>
+                      <select name="id_cus" class="form-control">
+                        <?php
+                        foreach ($customers as $cus) {
+                        ?>
+                          <option value=<?= $cus['id_cus'] ?>> <?= $cus['id_cus'] . " | " . $cus['nama'] ?></option>
+                        <?php } ?>
+                      </select>
                     </div>
                   </div>
                   <!-- /.card-body -->
@@ -145,29 +150,17 @@ $admin = $db->single();
   </div>
   <!-- ./wrapper -->
 
-    <!-- REQUIRED SCRIPTS -->
   <!-- jQuery -->
   <script src="plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap -->
+  <!-- Bootstrap 4 -->
   <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- overlayScrollbars -->
-  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- bs-custom-file-input -->
+  <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
   <!-- AdminLTE App -->
-  <script src="dist/js/adminlte.js"></script>
-
-  <!-- PAGE PLUGINS -->
-  <!-- jQuery Mapael -->
-  <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-  <script src="plugins/raphael/raphael.min.js"></script>
-  <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
-  <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
-  <!-- ChartJS -->
-  <script src="plugins/chart.js/Chart.min.js"></script>
-
+  <script src="dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="dist/js/demo.js"></script>
-  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="dist/js/pages/dashboard2.js"></script>
+  <!-- Page specific script -->
   <script>
     $(function() {
       bsCustomFileInput.init();

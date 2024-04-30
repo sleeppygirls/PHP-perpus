@@ -8201,16 +8201,16 @@ h1, h2, h3, h4, h5,
 .login-wrap {
   position: relative;
   background: #fff h3;
-    background-font-weight: 300; }
+  background-font-weight: 300; }
 
 .form-group {
   position: relative; }
   .form-group .label {
-    font-size: 12px;
+    /* font-size: 15px !important; */
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #000;
-    font-weight: 700; }
+    /* font-weight: bold !important; */}
   .form-group a {
     color: gray; }
 
@@ -8309,7 +8309,8 @@ h1, h2, h3, h4, h5,
   display: block;
   content: "\f14a";
   font-family: "FontAwesome";
-  color: rgba(0, 0, 0, 0.2); }
+  /* color: #DC5440; */
+}
 
 /* Style the checkmark/indicator */
 .checkbox-primary {
