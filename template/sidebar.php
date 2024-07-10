@@ -58,13 +58,13 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="input_buku.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-plus-circle fa-fw nav-icon"></i>
                   <p style="color: #ff7300; font-weight: 600; font-family: cursive;">Tambah</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="data_buku.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-eye fa-fw nav-icon"></i>
                   <p style="color: #ff7300; font-weight: 600; font-family: cursive;">Lihat</p>
                 </a>
               </li>
@@ -81,13 +81,13 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="input_peminjaman.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-plus-circle fa-fw nav-icon"></i>
                   <p style="color: #da085f; font-weight: 600; font-family: cursive;">Pinjam Buku</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="data_peminjaman.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-eye fa-fw nav-icon"></i>
                   <p style="color: #da085f; font-weight: 600; font-family: cursive;">Lihat Pinjam</p>
                 </a>
               </li>
@@ -104,13 +104,13 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="input_cus.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-plus-circle fa-fw nav-icon"></i>
                   <p style="color: #009dff; font-weight: 600; font-family: cursive;">Tambah</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="data_cus.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-eye fa-fw nav-icon"></i>
                   <p style="color: #009dff; font-weight: 600; font-family: cursive;">Lihat</p>
                 </a>
               </li>
@@ -127,13 +127,13 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="input_admin.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-plus-circle fa-fw nav-icon"></i>
                   <p style="color: #7700ff; font-weight: 600; font-family: cursive;">Tambah</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="data_admin.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-eye fa-fw nav-icon"></i>
                   <p style="color: #7700ff; font-weight: 600; font-family: cursive;">Lihat</p>
                 </a>
               </li>
